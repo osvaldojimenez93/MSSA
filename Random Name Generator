@@ -1,0 +1,23 @@
+from tkinter import *
+import random
+
+
+# this is the list of names that the machine will choose from
+
+def callback():
+    nameList = ('Marvin','Mark','Alex','Antwyne','Eugene','Prane','Gabe',
+       'MC','Corey','Walter','Gus','Jon','Amanda','Bryant','Gil','Jim',
+       'Joel','Belle','Travis','P','Colton','Jeff')
+    name = random.choice(nameList)
+    Label(root, text=name).pack()
+
+root = Tk()
+
+userInput = StringVar()
+
+ent = Entry(root, textvariable=userInput)
+ent.pack()
+btn = Button(root, text="Go", command=callback)
+btn.pack()
+
+root.mainloop()
