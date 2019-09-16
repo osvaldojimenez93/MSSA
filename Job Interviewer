@@ -1,0 +1,107 @@
+from tkinter import*
+from tkinter import messagebox
+
+master = Tk()
+master.title('Random Interview Question')
+
+def random_value():
+    import random
+    question_list = ['Tell me about yourself:', 'Tell me about a project you’ve worked on in your past job and how to accomplished it:',
+"Tell me why you're interested in this position", 'Tell me about a challenge/problem that you encountered in your last job and how you overcame it:',
+"Tell me about your strengths","Tell me about your weaknesses","Where do you picture yourself in your career 5 years from now?",
+ "Do you have any questions for me?","How do you prioritize work when given more than one project?","How do you deal with pressure or stressful situations?",
+ "Where do you see yourself in five years?","- What organizations do you most admire? Why?",
+ "Tell us about a time when there was an unintended negative consequence in another department as a result of your decision or action. Active Listening",
+ "Describe a time when you received negative feedback. How did it turn out?",
+ "Tell us about a time when you did not listen as well as you might have. Change Agility",
+ "Describe a time when your organization underwent drastic change. How did this affect you personally and professionally?",
+ "Tell us about a time when you had difficulty handling an organizational change."
+, "Describe a time when you had to take a stand against your peers or superiors."
+, "Describe a work situation in which you lost confidence or were unsure of yourself. What did you do? How did it work out? Conflict Management"
+, "Describe your most contentious business negotiation."
+, "Tell us about a time you were unable to resolve a conflict with a co-worker. Why couldn’t it be resolved? What was the result? Communicativeness"
+, "Describe a situation in which you were effective in keeping people informed."
+, "Tell us about a time when you were responsible for the flow of information and were less than effective."
+, "Describe a time you developed an imaginative solution to a difficult problem."
+, "Tell us about a time when you were unable to come up with a needed idea or approach. Composure"
+, "Describe a situation where your ability to stay calm under pressure was tested. What was the situation? How did you handle it?"
+, "Tell us about a time when you lost your composure. What was the result? Diplomacy"
+, "Describe a time when you had to build internal commitment before launching a project. What did you do?"
+, "Tell us about your greatest political blunder."
+, "Share an example of how you have had to revise a business plan to better respond to changing customer interests."
+, "Tell us about a time when you were unable to recover a dissatisfied customer. Drive/Energy"
+, "What were the longest hours you have ever worked?"
+, "Tell us about a time when you literally did not have enough energy or drive to complete the job to your satisfaction. Delegation"
+, "Provide an example of how you involve others in a project. What role(s) did you take?"
+, "What was your worst experience delegating work to another person? What did you learn from it?"
+, "Describe a time when you translated an idea or project for a foreign marketplace. What issues did you have to consider?"
+, "Tell us about your most serious cross-cultural mistake. Financial Acumen"
+, "If you were involved in an acquisition, what key financial indicators would you assess in the company being acquired?"
+, "What area of finance do you most need development in? High Standards"
+, "What did you do to prepare for this interview?"
+, "Tell us about a time that you had to compromise your personal standards to meet a deadline. Functional/Technical Expertise"
+, "In what area would others consider you an expert?"
+, "Within your profession, what areas or skills do you need to concentrate on the most in terms of your continued development?"
+, "Describe a time when you had to get your point across when speaking with someone who frequently interrupts. What did you do?"
+, "Tell us about a time you had difficulty getting your message understood in an informal meeting. What would you do differently next time? Industry Knowledge"
+, "Provide an example of how you have incorporated or anticipated an industry trend to make a positive impact on your work."
+, "What is your greatest weakness in terms of industry knowledge? Initiative"
+, "Describe a time when you intervened outside of your normal role to take care of an obvious problem."
+, "Tell us about a time when you should have taken action and didn’t. Why didn’t you act? What was the result."
+, "Describe a situation when you had to persuade your peers, or people over whom you had no positional authority."
+, "Tell us about a time when you had great difficulty motivating an individual or group. How did you modify your tactics? Were you ultimately successful? Learning Agility"
+, "Describe a time when you had to quickly learn a new skill to handle a new work assignment."
+, "Tell us about the most difficult time you’ve had learning something new on the job. Integrity"
+, "Describe a situation when you were working with individuals whose ethics did not match yours. How did you handle the situation?"
+, "Describe a situation in which you violated your own ethical or moral standards."
+, "In your last position, how did you communicate the companies mission to your staff?"
+, "Tell us about a time when your staff was confused about the company’s mission. How did you handle this? Leader Identification"
+, "Tell me about a rime when you felt particularly effective as a leader – either in an informal or formal role."
+, "Describe a time when you felt uncomfortable in a leadership role. Positive Impact"
+, "When has it been most difficult for you to see the best in people and situation?"
+, "Tell us about a time when you were unable to be positive about people or a circumstance."
+, "Describe a time when your knowledge of the organization gave you an advantage.what was the positive outcome?"
+, "Tell us about a time when you were ineffective because you didn’t know how things really worked. Presentation Skills"
+, "Describe a challenging formal presentation that you had to make. What was the outcome?"
+, "What was hour most upsetting presentation experience? What would you do differently? Organizing & Planning"
+, "Provide an example of a time-management skill you have learned and applied at work. How has it improved your productivity?"
+, "Describe a situation in which you were ineffective in managing a complex task. Results Orientation"
+, "What are you most proud of in your work career?"
+, "Tell us about a time when you failed to reach a desired result or achievement."
+, "Describe the most difficult decision you have had to make in the past few years. What process did you go through? What was the outcome?"
+, "Tell us about the worst decision you have ever made at work. Risk-Taking"
+, "Describe your most courageous act at work."
+, "Describe a time when you took a risk and failed. What did you learn? Relationship Building"
+, "Describe your professional network."
+, "Tell us about a time when you were unable to establish or maintain a needed relationship. Strategic Thinking"
+, "Describe a time when you had to alter a crucial business strategy midway through the implementation process."
+, "Describe a time when you were involved in a strategy that failed."
+, "How would your professional colleagues describe your strengths and weaknesses?"
+, "Describe a situation in which your lack of self-awareness inhibited your performance. Talent Development"
+, "Describe a time when you had to confront poor performance. What did you do? How did it turn out?"
+, "Tell us about a time when an employee fell below expectations and you were unable to correct performance. Sensitivity"
+, "Tell us about a time where you had to make a new team member comfortable."
+, "Describe a situation in which you did not work well with someone. What did you do? What happened?"
+, "Tell us about a time when you were involved in a system process improvement that involved new technology. What was your role? What was the outcome?"
+, "Tell us about your most difficult experience with technology. Team Management"
+, "Describe a time when you created a team at work. What was the outcome?"
+, "What was your worst experience leading a team? What did you learn from the experience? Visioning"
+, "Describe your personal career vision."
+, "Tell us about a time when you fell short in communicating a preferred future to others. Team Player"
+, "Describe your most successful team experience. What was your role? Why was your team successful?"
+, "What was your most unpleasant team experience? How did it impact your team performance?"
+, "What do you look for when you are editing someone else’s work?"
+, "What is your greatest developmental need in the area of written communication?"] 
+    random = random.choice(question_list)
+    messagebox.showinfo("Your Question is:", random)
+
+labelframe=LabelFrame(master, fg="red", font=14, text="Random Interview")
+labelframe.pack(side=BOTTOM)
+
+button = Button(labelframe, text = "Click here", fg="blue", command = random_value)
+button.pack(side=BOTTOM)
+
+label = Label(labelframe, text = "Click on button to get a question")
+label.pack(side=BOTTOM)
+
+master.mainloop()
