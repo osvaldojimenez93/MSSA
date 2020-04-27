@@ -1,0 +1,91 @@
+from openpyxl import load_workbook
+import hashlib
+
+wb = load_workbook('testbook.xlsx')
+sheet = wb.get_sheet_by_name('Sheet1')
+
+multiple_cells = sheet["B1":"B285"]
+
+
+
+
+
+
+#for row in multiple_cells:
+#    for cell in row:
+#        mac = cell.value
+#        mac = str(mac)
+
+#        if len(mac) == 12:
+#            scrubbed = mac[0:2]+":"+mac[2:4]+":"+mac[4:6]+":"+mac[6:8]+":"+mac[8:10]+":"+mac[10:12]
+#            print(scrubbed.upper())
+
+#        elif len(mac) == 17:
+#            scrubbed_2 = mac[0:2]+":"+mac[3:5]+":"+mac[6:8]+":"+mac[9:11]+":"+mac[12:14]+":"+mac[15:17]
+#            print(scrubbed_2.upper())
+
+#        else:
+#            print("NULL")
+
+
+
+        
+            
+        
+            
+        
+
+        
+
+#This will hash the MAC address to appear like NDR
+#////////////////////////////////////////////////////
+
+#multiple_cells = sheet['F2':'F276']
+#for row in multiple_cells:
+#    for cell in row:
+#        mac = cell.value
+        
+#        oui = cell.value[0:8].upper()
+        
+#        hash_object = hashlib.sha1(mac[8:].encode().lower())
+#        hex_dig = hash_object.hexdigest()
+
+#        if len(mac) == 17:
+#            scrubbed = "MacPII_"+ oui +"_"+ hex_dig
+#            print(scrubbed)
+
+#        else:
+#            print("NULL")
+
+
+
+
+
+
+
+
+
+#This will hash the hostname to appear like NDR
+#////////////////////////////////////////////////////// 
+
+#multiple_cells = sheet['B2':'B276']
+#for row in multiple_cells:
+#    for cell in row:
+#        hostname = cell.value
+        
+
+#        if hostname == "N\A":
+#            print("N/A")
+
+#        else:
+               
+#            hash_object = hashlib.sha1(hostname.encode().lower())
+#            hex_dig = hash_object.hexdigest()
+
+#            scrubbed = "ComputerPII_"+ hex_dig
+#            print(scrubbed)
+
+        
+
+
+
